@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,44 +15,69 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Menu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-qI-zLp">
-                                <rect key="frame" x="127" y="391" width="121" height="30"/>
+                                <rect key="frame" x="127" y="318.5" width="121" height="30"/>
                                 <state key="normal" title="Sprawdź listę dań"/>
+                                <connections>
+                                    <action selector="checkDishes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOG-Iz-51N"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqy-og-GrV">
-                                <rect key="frame" x="139.66666666666666" y="183.66666666666666" width="96" height="30"/>
+                                <rect key="frame" x="139.5" y="111" width="96" height="30"/>
                                 <state key="normal" title="Wylosuj danie"/>
+                                <connections>
+                                    <action selector="drawDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QAq-Sh-cMe"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="danie..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfN-AK-zV5">
-                                <rect key="frame" x="153" y="241.66666666666663" width="69" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWG-aj-u85">
-                                <rect key="frame" x="126.66666666666669" y="473.66666666666669" width="122" height="30"/>
+                                <rect key="frame" x="126.5" y="401" width="122" height="30"/>
                                 <state key="normal" title="Dodaj nowe danie"/>
+                                <connections>
+                                    <action selector="addNewDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7z-2f-FK9"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-nJ-XOq">
+                                <rect key="frame" x="55" y="149" width="225" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="danie...." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CfP-mh-CJO">
+                                <rect key="frame" x="69" y="163" width="236" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CfP-mh-CJO" firstAttribute="top" secondItem="aqy-og-GrV" secondAttribute="bottom" constant="22" id="0Hg-29-bt7"/>
+                            <constraint firstItem="CfP-mh-CJO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="143" id="4RO-cj-Rbv"/>
                             <constraint firstItem="KhH-qI-zLp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Ca-Dn-z4I"/>
-                            <constraint firstItem="UfN-AK-zV5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DVc-sl-Ehd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BG4-nJ-XOq" secondAttribute="bottom" constant="466" id="Fme-XZ-lRK"/>
                             <constraint firstItem="aqy-og-GrV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GqL-1a-PGu"/>
                             <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="aqy-og-GrV" secondAttribute="bottom" constant="177.5" id="HJX-MF-nfC"/>
+                            <constraint firstItem="BG4-nJ-XOq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="129" id="Jsj-Ng-4h6"/>
                             <constraint firstItem="TWG-aj-u85" firstAttribute="top" secondItem="KhH-qI-zLp" secondAttribute="bottom" constant="52.5" id="KZM-dr-kjD"/>
-                            <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="UfN-AK-zV5" secondAttribute="bottom" constant="119.5" id="csH-tw-rwH"/>
+                            <constraint firstItem="BG4-nJ-XOq" firstAttribute="top" secondItem="aqy-og-GrV" secondAttribute="bottom" constant="8" id="ZBz-V0-NhK"/>
+                            <constraint firstItem="CfP-mh-CJO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="bBW-bq-J24"/>
                             <constraint firstItem="KhH-qI-zLp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l1E-Iv-NGb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfP-mh-CJO" secondAttribute="trailing" constant="70" id="o7i-KI-yTO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CfP-mh-CJO" secondAttribute="bottom" constant="455" id="s5l-ye-7jR"/>
                             <constraint firstItem="TWG-aj-u85" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ziF-Gp-elb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="drawedDish" destination="CfP-mh-CJO" id="2m2-Rf-Tg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="56.221889055472268"/>
         </scene>
     </scenes>
 </document>

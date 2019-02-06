@@ -16,5 +16,20 @@ class ViewController: UIViewController {
     }
 
 
+    @IBOutlet weak var drawedDish: UITextView!
+    
+    @IBAction func drawDish(_ sender: Any) {
+    }
+    
+    @IBAction func checkDishes(_ sender: Any) {
+    }
+    
+    
+    @IBAction func addNewDish(_ sender: Any) {
+    }
+    
+    
+    
+    
 }
 
