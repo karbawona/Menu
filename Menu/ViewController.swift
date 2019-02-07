@@ -12,10 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let urlJson = "https://my-json-server.typicode.com/karbawona/dishes/db"
+        let content = try! String (contentsOf: URL (string: urlJson)!)
+        
+        print(content)
+        
     }
 
 
+    
     @IBOutlet weak var drawedDish: UITextView!
     
     @IBAction func drawDish(_ sender: Any) {
@@ -24,11 +30,11 @@ class ViewController: UIViewController {
     @IBAction func checkDishes(_ sender: Any) {
     }
     
-    
     @IBAction func addNewDish(_ sender: Any) {
     }
-    
-    
+
+
+
     
     
 }

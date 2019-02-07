@@ -10,11 +10,16 @@ import Foundation
 
 
 
-struct Dishes {
+struct Dish : Codable {
     
-    var name : String
-    var category : String
-    var preparationTime : String
+    let name : String
+    let category : String
+    let preparationTime : String
+
     
+}
+
+struct Dishes : Codable {
     
+    let dishes : [Dish]
 }
