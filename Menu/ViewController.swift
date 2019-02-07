@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlJson = "https://my-json-server.typicode.com/karbawona/dishes/db"
-        let content = try! String (contentsOf: URL (string: urlJson)!)
-        
-        print(content)
-        
+        let url = Bundle.main.url(forResource: "data", withExtension: "json")
+        guard let jsonData = url else{return}
+        guard let data = try? Data(contentsOf: jsonData) else { return }
+        guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else{return}
+    
+        print(json)
     }
 
 
