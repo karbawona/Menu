@@ -10,26 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var dishes = [Dish]()
+    var dishes : [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = Bundle.main.url(forResource: "data", withExtension: "json")
-        guard let jsonData = url else{return}
-        guard let data = try? Data(contentsOf: jsonData) else { return }
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else{return}
-    
-       // print(json)
+//        let url = Bundle.main.url(forResource: "data", withExtension: "json")
+//        guard let jsonData = url else{return}
+//        guard let dataJson = try? Data(contentsOf: jsonData) else { return }
+//        guard let json = try? JSONSerialization.jsonObject(with: dataJson, options: []) else{return}
         
-        do{
-        let decoder = JSONDecoder()
-            self.dishes = try decoder.decode([Dish].self, from: data)
-        } catch let error {
-            print(error as? Any)
+       //   dishes =  loadJson()!
+        
+        if let path = Bundle.main.path(forResource: "data", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let dishesJson = jsonResult["dishes"] as? [Any] {
+                    print(dishesJson)
+                }
+            } catch {
+                // handle error
+            }
         }
-
-    }
+}
 
 
     
