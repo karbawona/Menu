@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var dishes = [Dish]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +20,15 @@ class ViewController: UIViewController {
         guard let data = try? Data(contentsOf: jsonData) else { return }
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else{return}
     
-        print(json)
+       // print(json)
+        
+        do{
+        let decoder = JSONDecoder()
+            self.dishes = try decoder.decode([Dish].self, from: data)
+        } catch let error {
+            print(error as? Any)
+        }
+
     }
 
 
