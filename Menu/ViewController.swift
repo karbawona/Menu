@@ -10,32 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var dishes : [Dish] = []
+    var data : Dishes?
     
+     //print(path)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+       let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
+        //print(path)
         
-//        let url = Bundle.main.url(forResource: "data", withExtension: "json")
-//        guard let jsonData = url else{return}
-//        guard let dataJson = try? Data(contentsOf: jsonData) else { return }
-//        guard let json = try? JSONSerialization.jsonObject(with: dataJson, options: []) else{return}
-        
-       //   dishes =  loadJson()!
-        
-        if let path = Bundle.main.path(forResource: "data", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let dishesJson = jsonResult["dishes"] as? [Any] {
-                    print(dishesJson)
-                }
-            } catch {
-                // handle error
-            }
-        }
-}
+        do{
+           let input = try String (contentsOf: path!)
+        print (input)
+        } catch{ print (error) }
+   
+    }
+    
 
 
+    
+    
+    
+    
+    
+    
+    
     
     @IBOutlet weak var drawedDish: UITextView!
     
