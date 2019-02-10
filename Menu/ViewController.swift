@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var data : Dishes?
+   open var data : Dishes?
     
      //print(path)
 
@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         } catch{ print (error) }
    
         for index in 0...3 {
-            print("category: \(String(describing: data?.dishesStruct[index].category))")
-            print("name: \(String(describing: data?.dishesStruct[index].name))")
-            print("time: \(String(describing: data?.dishesStruct[index].preparationTime))")
+            print("category: \(String(describing: data!.dishesStruct[index].category))")
+            print("name: \(String(describing: data!.dishesStruct[index].name))")
+            print("time: \(String(describing: data!.dishesStruct[index].preparationTime))")
         }
         
     }
@@ -50,16 +50,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var drawedDish: UITextView!
     
     @IBAction func drawDish(_ sender: Any) {
+        drawedDish.text = data!.dishesStruct.randomElement()?.name
     }
     
     @IBAction func checkDishes(_ sender: Any) {
+        
+        
+        allDishes.text = data!.dishesStruct[0].name
+        
+        
     }
     
     @IBAction func addNewDish(_ sender: Any) {
     }
 
 
-
+    @IBOutlet weak var allDishes: UITextView!
+    
     
     
 }
