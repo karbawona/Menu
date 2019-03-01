@@ -13,9 +13,14 @@ import Foundation
 struct Dish : Codable {
     
     let name : String
-    var category : String
+    let category : String
     let preparationTime : String
     
+    init(name: String, category: String, preparationTime: String) {
+        self.name = name
+        self.category = category
+        self.preparationTime = preparationTime
+    }
     
 }
 
@@ -23,7 +28,7 @@ struct Dish : Codable {
 
 struct Dishes : Codable {
     
-    let dishesStruct : [Dish]
+    var dishesStruct : [Dish]
     enum CodingKeys : String, CodingKey {
         case dishesStruct = "dishes"
     }

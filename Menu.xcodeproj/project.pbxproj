@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F3404ED2227226400E7E6E7 /* AllDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3404EC2227226400E7E6E7 /* AllDishesViewController.swift */; };
+		6F5B4E1E2229DDC8008D1440 /* AddNewDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B4E1D2229DDC8008D1440 /* AddNewDishViewController.swift */; };
 		6FFF7E63220B195A00C778B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF7E62220B195A00C778B9 /* AppDelegate.swift */; };
 		6FFF7E65220B195A00C778B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFF7E64220B195A00C778B9 /* ViewController.swift */; };
 		6FFF7E68220B195A00C778B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FFF7E66220B195A00C778B9 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		6F3404EC2227226400E7E6E7 /* AllDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishesViewController.swift; sourceTree = "<group>"; };
+		6F5B4E1D2229DDC8008D1440 /* AddNewDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDishViewController.swift; sourceTree = "<group>"; };
 		6FFF7E5F220B195A00C778B9 /* Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFF7E62220B195A00C778B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FFF7E64220B195A00C778B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				6FFF7E6E220B195B00C778B9 /* Info.plist */,
 				6FFF7E82220B34C700C778B9 /* DishesStruct.swift */,
 				6F3404EC2227226400E7E6E7 /* AllDishesViewController.swift */,
+				6F5B4E1D2229DDC8008D1440 /* AddNewDishViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5B4E1E2229DDC8008D1440 /* AddNewDishViewController.swift in Sources */,
 				6F3404ED2227226400E7E6E7 /* AllDishesViewController.swift in Sources */,
 				6FFF7E65220B195A00C778B9 /* ViewController.swift in Sources */,
 				6FFF7E83220B34C700C778B9 /* DishesStruct.swift in Sources */,
