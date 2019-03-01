@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   open var data : Dishes?
+   var data : Dishes?
     
      //print(path)
 
     override func viewDidLoad() {
         super.viewDidLoad()
        let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
-     //   print(path)
+  //      print(path)
         
         do{
            let input = try String (contentsOf: path!)
@@ -33,12 +33,12 @@ class ViewController: UIViewController {
                 print(error)
             }
         } catch{ print (error) }
-   
-        for index in 0...3 {
-            print("category: \(String(describing: data!.dishesStruct[index].category))")
-            print("name: \(String(describing: data!.dishesStruct[index].name))")
-            print("time: \(String(describing: data!.dishesStruct[index].preparationTime))")
-        }
+//
+//        for index in 0...3 {
+//            print("category: \(String(describing: data!.dishesStruct[index].category))")
+//            print("name: \(String(describing: data!.dishesStruct[index].name))")
+//            print("time: \(String(describing: data!.dishesStruct[index].preparationTime))")
+//        }
         
     }
     
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     @IBAction func checkDishes(_ sender: Any) {
         
         
-        allDishes.text = data!.dishesStruct[0].name
+       // allDishes.text = data!.dishesStruct[0].name
         
         
     }
@@ -65,8 +65,6 @@ class ViewController: UIViewController {
     }
 
 
-    @IBOutlet weak var allDishes: UITextView!
-    
     
     
 }

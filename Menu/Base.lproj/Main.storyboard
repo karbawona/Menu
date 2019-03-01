@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-qI-zLp">
-                                <rect key="frame" x="147" y="250" width="121" height="56"/>
-                                <state key="normal" title="Sprawdź listę dań"/>
-                                <connections>
-                                    <action selector="checkDishes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOG-Iz-51N"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqy-og-GrV">
                                 <rect key="frame" x="157" y="109" width="96" height="30"/>
                                 <state key="normal" title="Wylosuj danie"/>
@@ -39,52 +32,115 @@
                                     <action selector="addNewDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7z-2f-FK9"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" text="danie...." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CfP-mh-CJO">
-                                <rect key="frame" x="70" y="163" width="275" height="42"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" text="wylosowane danie" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CfP-mh-CJO">
+                                <rect key="frame" x="70" y="163" width="275" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="lista dań" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="U6T-iQ-X1b">
-                                <rect key="frame" x="120" y="351" width="175" height="35"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-qI-zLp">
+                                <rect key="frame" x="144" y="287" width="121" height="30"/>
+                                <state key="normal" title="Sprawdź listę dań"/>
+                                <connections>
+                                    <action selector="checkDishes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOG-Iz-51N"/>
+                                    <segue destination="lBZ-z3-3C5" kind="show" identifier="allDishesSegue" animates="NO" id="CxB-oj-Oq0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="230" id="2cO-nj-HYe"/>
-                            <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="CfP-mh-CJO" secondAttribute="bottom" constant="45" id="GLd-8c-Wcm"/>
+                            <constraint firstItem="KhH-qI-zLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="3HF-IM-MEH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfP-mh-CJO" secondAttribute="trailing" constant="69" id="5Ga-x6-81d"/>
+                            <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="CfP-mh-CJO" secondAttribute="bottom" constant="57" id="DY2-69-ccH"/>
+                            <constraint firstItem="CfP-mh-CJO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="143" id="F3X-zy-Xwn"/>
                             <constraint firstItem="aqy-og-GrV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="89" id="I6V-Rr-7w7"/>
-                            <constraint firstItem="U6T-iQ-X1b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="ItD-1m-WpO"/>
-                            <constraint firstItem="U6T-iQ-X1b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="331" id="Lhf-Dw-O8O"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfP-mh-CJO" secondAttribute="trailing" constant="69" id="Pzz-5D-aCg"/>
+                            <constraint firstItem="CfP-mh-CJO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="Khu-Ul-ejI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CfP-mh-CJO" secondAttribute="trailing" constant="69" id="LKq-DU-m9Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TWG-aj-u85" secondAttribute="bottom" constant="228" id="QXn-kx-Ztw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KhH-qI-zLp" secondAttribute="trailing" constant="146" id="Qjj-Ph-tXx"/>
+                            <constraint firstItem="KhH-qI-zLp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="267" id="Rab-2O-p33"/>
                             <constraint firstItem="TWG-aj-u85" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="Svj-wB-o2j"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U6T-iQ-X1b" secondAttribute="trailing" constant="119" id="U9Q-KC-31I"/>
-                            <constraint firstItem="CfP-mh-CJO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="143" id="bdd-qm-peU"/>
-                            <constraint firstItem="CfP-mh-CJO" firstAttribute="top" secondItem="aqy-og-GrV" secondAttribute="bottom" constant="24" id="buq-MH-ycU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U6T-iQ-X1b" secondAttribute="bottom" constant="350" id="csh-pa-03g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aqy-og-GrV" secondAttribute="trailing" constant="161" id="gRW-ez-4qq"/>
-                            <constraint firstItem="CfP-mh-CJO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="hhf-vB-xFo"/>
-                            <constraint firstItem="TWG-aj-u85" firstAttribute="top" secondItem="U6T-iQ-X1b" secondAttribute="bottom" constant="92" id="nuI-4B-UkN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KhH-qI-zLp" secondAttribute="bottom" constant="419" id="lz6-V2-dEb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWG-aj-u85" secondAttribute="trailing" constant="148" id="nxo-9f-GyS"/>
-                            <constraint firstItem="KhH-qI-zLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="s4c-cX-22v"/>
                             <constraint firstItem="aqy-og-GrV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="tpL-4y-Afn"/>
-                            <constraint firstItem="U6T-iQ-X1b" firstAttribute="top" secondItem="KhH-qI-zLp" secondAttribute="bottom" constant="45" id="xat-77-JHH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KhH-qI-zLp" secondAttribute="trailing" constant="149" id="vVs-5I-1Q8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="allDishes" destination="U6T-iQ-X1b" id="xjD-cT-9jH"/>
                         <outlet property="drawedDish" destination="CfP-mh-CJO" id="2m2-Rf-Tg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="55.434782608695656"/>
+        </scene>
+        <!--All Dishes View Controller-->
+        <scene sceneID="IW0-Z5-qZY">
+            <objects>
+                <viewController id="lBZ-z3-3C5" customClass="AllDishesViewController" customModule="Menu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o8e-Vq-CNe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-Nx-NcK">
+                                <rect key="frame" x="20" y="33" width="48" height="30"/>
+                                <state key="normal" title="Powrót"/>
+                                <connections>
+                                    <action selector="returnTouched:" destination="lBZ-z3-3C5" eventType="primaryActionTriggered" id="YZu-ep-WVX"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akA-8h-NRy">
+                                <rect key="frame" x="0.0" y="93" width="414" height="643"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellDish" textLabel="XQS-Pz-u3a" style="IBUITableViewCellStyleDefault" id="3AT-7t-OEA">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3AT-7t-OEA" id="s89-hd-gA8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XQS-Pz-u3a">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lBZ-z3-3C5" id="FzT-mE-pB6"/>
+                                    <outlet property="delegate" destination="lBZ-z3-3C5" id="gOd-EN-7iB"/>
+                                </connections>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lista dań" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mOu-vV-dhI">
+                                <rect key="frame" x="165" y="33" width="86" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0eV-e6-PwP" firstAttribute="trailing" secondItem="mOu-vV-dhI" secondAttribute="trailing" constant="163" id="Pxv-Wj-twS"/>
+                            <constraint firstItem="pX1-Nx-NcK" firstAttribute="top" secondItem="0eV-e6-PwP" secondAttribute="top" constant="13" id="TXY-eS-gW6"/>
+                            <constraint firstItem="pX1-Nx-NcK" firstAttribute="leading" secondItem="0eV-e6-PwP" secondAttribute="leading" constant="20" id="UJm-gC-oSm"/>
+                            <constraint firstItem="0eV-e6-PwP" firstAttribute="bottom" secondItem="mOu-vV-dhI" secondAttribute="bottom" constant="673" id="di7-A8-kmf"/>
+                            <constraint firstItem="mOu-vV-dhI" firstAttribute="leading" secondItem="pX1-Nx-NcK" secondAttribute="trailing" constant="97" id="faw-Go-HoD"/>
+                            <constraint firstItem="mOu-vV-dhI" firstAttribute="leading" secondItem="0eV-e6-PwP" secondAttribute="leading" constant="165" id="oFZ-Hc-Vlv"/>
+                            <constraint firstItem="mOu-vV-dhI" firstAttribute="top" secondItem="0eV-e6-PwP" secondAttribute="top" constant="13" id="y8H-DY-wEj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0eV-e6-PwP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChC-TY-g4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828.98550724637687" y="54.619565217391312"/>
         </scene>
     </scenes>
 </document>
