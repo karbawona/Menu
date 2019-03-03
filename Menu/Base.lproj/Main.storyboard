@@ -151,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-ho-Tro">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-ho-Tro">
                                 <rect key="frame" x="184" y="567" width="40" height="30"/>
                                 <state key="normal" title="Dodaj"/>
                                 <connections>
@@ -161,30 +161,14 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wpisz nazwę..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAD-UB-QdZ">
                                 <rect key="frame" x="48" y="138" width="323" height="30"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addName:" destination="L4j-OE-qOs" eventType="editingDidEnd" id="u59-ZW-HXZ"/>
-                                    <action selector="addedName:" destination="L4j-OE-qOs" eventType="editingDidEnd" id="24L-Nl-KaV"/>
-                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wpisz kategroię..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ryt-jp-YDZ">
-                                <rect key="frame" x="55" y="296" width="313" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wpisz czas...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OW9-sp-JR4">
+                                <rect key="frame" x="53" y="449" width="302" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addCategory:" destination="L4j-OE-qOs" eventType="editingDidEnd" id="svR-MB-LAE"/>
-                                    <action selector="addedCategory:" destination="L4j-OE-qOs" eventType="editingDidEnd" id="R84-EM-XDH"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wpisz czas...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OW9-sp-JR4">
-                                <rect key="frame" x="51" y="463" width="320" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="addTime:" destination="L4j-OE-qOs" eventType="editingDidEnd" id="Qvy-Kh-Xcz"/>
-                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="nazwa" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-nh-gCF">
                                 <rect key="frame" x="126" y="95" width="157" height="35"/>
@@ -192,8 +176,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="kategoria" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BWi-Pb-9HP">
-                                <rect key="frame" x="126" y="239" width="157" height="35"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="kategoria" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BWi-Pb-9HP">
+                                <rect key="frame" x="126" y="227" width="157" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -205,52 +189,66 @@
                                     <action selector="returnTouched:" destination="L4j-OE-qOs" eventType="touchUpInside" id="WE1-hZ-3w8"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="czas przygotowania" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-kq-CRs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="czas przygotowania" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-kq-CRs">
                                 <rect key="frame" x="126" y="406" width="157" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <pickerView contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="8vx-uq-cWU">
+                                <rect key="frame" x="2" y="200" width="378" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xAD-UB-QdZ" firstAttribute="top" secondItem="Pp9-nh-gCF" secondAttribute="bottom" constant="8" id="0nu-nv-vi9"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="xAD-UB-QdZ" secondAttribute="trailing" constant="43" id="3iF-zT-mDl"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="BWi-Pb-9HP" secondAttribute="bottom" constant="474" id="6dK-ov-NRB"/>
-                            <constraint firstItem="fbx-kq-CRs" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="126" id="Bfd-C0-uU7"/>
-                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="Ryt-jp-YDZ" secondAttribute="trailing" constant="43" id="FLj-FB-n3I"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="fbx-kq-CRs" secondAttribute="trailing" constant="131" id="CO7-vV-b74"/>
+                            <constraint firstItem="8vx-uq-cWU" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="2" id="Pvg-Qj-Gjd"/>
+                            <constraint firstItem="8vx-uq-cWU" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="180" id="PwY-DY-mn7"/>
                             <constraint firstItem="Pp9-nh-gCF" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="126" id="QJK-HU-pDF"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="Pp9-nh-gCF" secondAttribute="trailing" constant="131" id="SkT-6h-eWV"/>
-                            <constraint firstItem="Ryt-jp-YDZ" firstAttribute="top" secondItem="BWi-Pb-9HP" secondAttribute="bottom" constant="2" id="VRo-ON-ouJ"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="OW9-sp-JR4" secondAttribute="trailing" constant="59" id="ULc-kG-V9X"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="Bac-ho-Tro" secondAttribute="trailing" constant="190" id="WSR-lh-m6J"/>
                             <constraint firstItem="BWi-Pb-9HP" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="207" id="WkF-RN-NMa"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="DY3-Bc-lPm" secondAttribute="trailing" constant="347" id="Yue-A2-H8r"/>
-                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="Bac-ho-Tro" secondAttribute="trailing" constant="187" id="aVP-OV-wZH"/>
-                            <constraint firstItem="OW9-sp-JR4" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="51" id="c3K-yO-422"/>
-                            <constraint firstItem="fbx-kq-CRs" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="336" id="dsP-cw-Euc"/>
-                            <constraint firstItem="Ryt-jp-YDZ" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="58" id="dvQ-2P-5oL"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="8vx-uq-cWU" secondAttribute="trailing" constant="34" id="dr9-Yy-QTD"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="OW9-sp-JR4" secondAttribute="bottom" constant="257" id="du9-Og-2dV"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="Pp9-nh-gCF" secondAttribute="bottom" constant="606" id="e7r-HK-NwJ"/>
-                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="fbx-kq-CRs" secondAttribute="trailing" constant="131" id="g2x-N3-foY"/>
                             <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="BWi-Pb-9HP" secondAttribute="trailing" constant="131" id="hv4-RQ-v7f"/>
                             <constraint firstItem="BWi-Pb-9HP" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="126" id="jkf-4m-B3q"/>
                             <constraint firstItem="xAD-UB-QdZ" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="48" id="k7w-SM-Wk1"/>
-                            <constraint firstItem="Bac-ho-Tro" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="469" id="pIA-kD-pXl"/>
-                            <constraint firstItem="Je2-pe-ivk" firstAttribute="trailing" secondItem="OW9-sp-JR4" secondAttribute="trailing" constant="43" id="raC-3L-OvM"/>
-                            <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="fbx-kq-CRs" secondAttribute="bottom" constant="345" id="rv2-67-JoJ"/>
-                            <constraint firstItem="OW9-sp-JR4" firstAttribute="top" secondItem="fbx-kq-CRs" secondAttribute="bottom" constant="8" id="rwX-zL-KWy"/>
+                            <constraint firstItem="OW9-sp-JR4" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="429" id="lcY-wG-WAV"/>
+                            <constraint firstItem="fbx-kq-CRs" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="386" id="lsc-PT-wax"/>
+                            <constraint firstItem="fbx-kq-CRs" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="126" id="obv-9u-6bK"/>
                             <constraint firstItem="DY3-Bc-lPm" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="23" id="sev-Yj-mnj"/>
+                            <constraint firstItem="OW9-sp-JR4" firstAttribute="leading" secondItem="Je2-pe-ivk" secondAttribute="leading" constant="53" id="sgD-vE-3LQ"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="8vx-uq-cWU" secondAttribute="bottom" constant="320" id="sgx-FS-TE3"/>
                             <constraint firstItem="Pp9-nh-gCF" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="75" id="vWR-tz-EzP"/>
+                            <constraint firstItem="Bac-ho-Tro" firstAttribute="top" secondItem="Je2-pe-ivk" secondAttribute="top" constant="547" id="vfU-XM-xeS"/>
+                            <constraint firstItem="Je2-pe-ivk" firstAttribute="bottom" secondItem="fbx-kq-CRs" secondAttribute="bottom" constant="295" id="x8h-b6-vs5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Je2-pe-ivk"/>
                     </view>
                     <connections>
-                        <outlet property="newCategory" destination="Ryt-jp-YDZ" id="ICr-bm-co7"/>
-                        <outlet property="newName" destination="xAD-UB-QdZ" id="uHm-QS-VLV"/>
-                        <outlet property="newTime" destination="OW9-sp-JR4" id="eMm-ce-DIO"/>
+                        <outlet property="newCategory" destination="8vx-uq-cWU" id="oaY-P6-KEw"/>
+                        <outlet property="newName" destination="xAD-UB-QdZ" id="gtM-Mo-Ft1"/>
+                        <outlet property="newTime" destination="OW9-sp-JR4" id="4IV-6T-kEX"/>
+                        <outlet property="searchDisplayController" destination="0et-yt-exm" id="9qY-j7-T8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3w-XF-vTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="0et-yt-exm">
+                    <connections>
+                        <outlet property="delegate" destination="L4j-OE-qOs" id="b8W-Do-78v"/>
+                        <outlet property="searchContentsController" destination="L4j-OE-qOs" id="pat-8H-RUt"/>
+                        <outlet property="searchResultsDataSource" destination="L4j-OE-qOs" id="W3O-N9-DzC"/>
+                        <outlet property="searchResultsDelegate" destination="L4j-OE-qOs" id="LBm-Hg-2PA"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="829" y="809"/>
+            <point key="canvasLocation" x="828.98550724637687" y="808.69565217391312"/>
         </scene>
     </scenes>
 </document>

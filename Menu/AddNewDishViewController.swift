@@ -8,11 +8,17 @@
 
 import UIKit
 
-class AddNewDishViewController : UIViewController {
+class AddNewDishViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
 
+    let categ = ["przekąska", "zupa", "danie główne", "ryba", "zapiekanka", "makaron"]
     var data : Dishes?
+    var temp : String?
     
     override func viewDidLoad() {
+        newCategory.delegate = self
+        newCategory.dataSource = self
+        
         super.viewDidLoad()
         let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
         //      print(path)
@@ -46,21 +52,42 @@ class AddNewDishViewController : UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+
     @IBOutlet weak var newName: UITextField!
-    
- 
-    @IBOutlet weak var newCategory: UITextField!
-    
+
     @IBOutlet weak var newTime: UITextField!
+    
+    @IBOutlet weak var newCategory: UIPickerView!
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categ.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        temp = categ[row]
+        return temp
+    }
+    
+
+    
+    
     
     @IBAction func addAll(_ sender: Any) {
         
-        var count = data!.dishesStruct.count
-        let newDish = Dish(name: newName.text!, category: newCategory.text!, preparationTime: newTime.text!)
+
+        if newName.text! != "" && temp! != "" && newTime.text! != "" {
+        let newDish = Dish(name: newName.text!, category: temp!, preparationTime: newTime.text!)
         data!.dishesStruct.append(newDish)
         print (data!.dishesStruct.last?.name)
-        
+              print (data!.dishesStruct.last?.category)
+              print (data!.dishesStruct.last?.preparationTime)
+        }
         
     }
     
