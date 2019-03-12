@@ -12,16 +12,14 @@ class AllDishesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var data : Dishes?
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
-             print(path)
         
-        do{
+        do {
             let input = try String (contentsOf: path!)
-            //     print (input)
             let contentData = input.data(using: .utf8)
             
             let jsDec = JSONDecoder()
@@ -31,13 +29,14 @@ class AllDishesViewController: UIViewController, UITableViewDelegate, UITableVie
                 print ("nie dziala data")
                 print(error)
             }
-        } catch{ print (error) }
+        } catch {
+            print (error) }
         
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return data!.dishesStruct.count
+        return data!.dishesStruct.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,10 +45,7 @@ class AllDishesViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-
-
-
-
+    
     @IBAction func returnTouched(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
