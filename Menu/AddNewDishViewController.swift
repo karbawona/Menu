@@ -14,36 +14,27 @@ class AddNewDishViewController : UIViewController, UIPickerViewDelegate, UIPicke
     let categ = ["przekąska", "zupa", "danie główne", "ryba", "zapiekanka", "makaron"]
     var data : Dishes?
     var temp : String?
+    let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
+    
     
     override func viewDidLoad() {
         newCategory.delegate = self
         newCategory.dataSource = self
         
-        super.viewDidLoad()
-        let  path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("saving.json")
-        //      print(path)
-        
+    super.viewDidLoad()
+
         do{
             let input = try String (contentsOf: path!)
-            //     print (input)
             let contentData = input.data(using: .utf8)
             
             let jsDec = JSONDecoder()
             do {
                 data = try jsDec.decode(Dishes.self, from: contentData!)
-                //     print (data)
             } catch {
                 print ("nie dziala data")
                 print(error)
             }
         } catch{ print (error) }
-        //
-        //        for index in 0...3 {
-        //            print("category: \(String(describing: data!.dishesStruct[index].category))")
-        //            print("name: \(String(describing: data!.dishesStruct[index].name))")
-        //            print("time: \(String(describing: data!.dishesStruct[index].preparationTime))")
-        //        }
-        
         
     }
     
@@ -76,17 +67,33 @@ class AddNewDishViewController : UIViewController, UIPickerViewDelegate, UIPicke
     
 
     
-    
-    
     @IBAction func addAll(_ sender: Any) {
         
 
         if newName.text! != "" && temp! != "" && newTime.text! != "" {
-        let newDish = Dish(name: newName.text!, category: temp!, preparationTime: newTime.text!)
-        data!.dishesStruct.append(newDish)
-        print (data!.dishesStruct.last?.name)
-              print (data!.dishesStruct.last?.category)
-              print (data!.dishesStruct.last?.preparationTime)
+        
+            let newDish = Dish(name: newName.text!, category: temp!, preparationTime: newTime.text!)
+    
+            data!.dishesStruct.append(newDish)
+            
+        
+            do {
+                let jsonEncoder = JSONEncoder()
+                let jsonData = try jsonEncoder.encode(data)
+                let jsonString = String(data: jsonData, encoding: .utf8)
+                print(jsonString)
+
+                    do{
+                   try jsonString?.write(to: path!, atomically: true, encoding: .utf8)
+                    } catch {
+                        print ("Unexpected error: \(error).")
+                    }
+
+            } catch {
+                print("Unexpected error: \(error).")
+            }
+        
+        
         }
         
     }
