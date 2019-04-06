@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct Dish : Codable {
+public struct Dish : Codable{
     
     let name : String
     let category : String
@@ -24,14 +24,16 @@ struct Dish : Codable {
     
 }
 
-
-
 struct Dishes : Codable {
-    
+
     var dishesStruct : [Dish]
     enum CodingKeys : String, CodingKey {
         case dishesStruct = "dishes"
     }
 }
 
+public let dish1 = Dish(name: "pomidorowa", category: "zupa", preparationTime: "2h")
+public let dish2 = Dish(name: "makaron ze szpinakiem", category: "obiad", preparationTime: "30 min")
+public let dish3 = Dish(name: "ziemniaki", category: "obiad", preparationTime: "40 min")
 
+public var dishArray : [Dish] = [dish1, dish2, dish3]
