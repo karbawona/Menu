@@ -77,13 +77,11 @@ class AddNewDishViewController :  UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func addAll(_ sender: Any) {
 
-
-        if newName.text! != "" && temp! != "" && newTime.text! != "" {
-
             let newDish = Dish(name: newName.text!, category: temp!, preparationTime: newTime.text!)
 
             dishArray.append(newDish)
-        }
+
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

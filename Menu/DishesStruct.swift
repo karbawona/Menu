@@ -32,8 +32,8 @@ struct Dishes : Codable {
     }
 }
 
-public let dish1 = Dish(name: "pomidorowa", category: "zupa", preparationTime: "2h")
-public let dish2 = Dish(name: "makaron ze szpinakiem", category: "obiad", preparationTime: "30 min")
-public let dish3 = Dish(name: "ziemniaki", category: "obiad", preparationTime: "40 min")
+let dish1 = Dish(name: "pomidorowa", category: "zupa", preparationTime: "2h")
+let dish2 = Dish(name: "makaron ze szpinakiem", category: "obiad", preparationTime: "30 min")
+let dish3 = Dish(name: "ziemniaki", category: "obiad", preparationTime: "40 min")
 
-public var dishArray : [Dish] = [dish1, dish2, dish3]
+var dishArray : [Dish] = [dish1, dish2, dish3]
